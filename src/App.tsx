@@ -1,18 +1,22 @@
-import {Avatar, Button, Card, CardBody, NextUIProvider, Switch, User} from "@nextui-org/react";
+import {Button, Card, CardBody, NextUIProvider, Switch, User} from "@nextui-org/react";
 import {Header} from "./components/Header.tsx";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 function App() {
+    const [isSelected, setIsSelected] = useState(true)
 
-    const toggleTheme = (themeValue: string) => {
-        alert(themeValue)
-    };
+    const switchToggleHandler = () => {
+        setIsSelected(!isSelected)
+        console.log(isSelected)
+    }
 
     return (
         <NextUIProvider>
-            <main className={'bg-slate-100 h-screen p-4'}>
-                <Header/>
-                <Switch defaultSelected aria-label="Automatic updates" onClick={()=> toggleTheme('test')}/>
+            <main className={`${isSelected ? 'dark' : ''} text-foreground bg-background h-screen`}>
+                <Header
+                    isSelected={isSelected}
+                    switchToggleHandler={switchToggleHandler}
+                />
                 <section>
 
                     <Card>

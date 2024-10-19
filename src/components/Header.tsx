@@ -1,8 +1,15 @@
-
 import {Avatar, Button, Switch} from "@nextui-org/react";
 
+type Props = {
+    isSelected: boolean
+    switchToggleHandler: ()=>void
+}
 
-export const Header = () => {
+export const Header = ({isSelected, switchToggleHandler}: Props) => {
+
+
+
+
     return (
         <header className={'flex justify-between'}>
             <div className={'flex items-center'}>
@@ -12,7 +19,16 @@ export const Header = () => {
                 </Button>
                 <Button isIconOnly size={'sm'}>1</Button>
             </div>
-            <div><Switch defaultSelected aria-label="Automatic updates"/></div>
+            <div>
+                <Switch
+                    defaultSelected
+                    size="md"
+                    color="primary"
+                    isSelected={isSelected}
+                    onClick={switchToggleHandler}
+                />
+
+            </div>
         </header>
     );
 };
