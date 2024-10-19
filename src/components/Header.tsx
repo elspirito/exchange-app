@@ -1,4 +1,6 @@
 import {Avatar, Button, Switch} from "@nextui-org/react";
+import {MoonIcon} from "../icons/MoonIcon.tsx";
+import {SunIcon} from "../icons/SunIcon.tsx";
 
 type Props = {
     isSelected: boolean
@@ -22,10 +24,17 @@ export const Header = ({isSelected, switchToggleHandler}: Props) => {
             <div>
                 <Switch
                     defaultSelected
-                    size="md"
-                    color="primary"
+                    size="lg"
+                    color="default"
                     isSelected={isSelected}
-                    onClick={switchToggleHandler}
+                    onChange={switchToggleHandler}
+                    thumbIcon={({ isSelected, className }) =>
+                        isSelected ? (
+                            <SunIcon className={className} />
+                        ) : (
+                            <MoonIcon className={className} />
+                        )
+                    }
                 />
 
             </div>

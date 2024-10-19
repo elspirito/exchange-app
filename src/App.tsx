@@ -1,4 +1,4 @@
-import {Button, Card, CardBody, NextUIProvider, Switch, User} from "@nextui-org/react";
+import {Button, Card, CardBody, NextUIProvider, User} from "@nextui-org/react";
 import {Header} from "./components/Header.tsx";
 import {useState} from "react";
 
@@ -7,12 +7,11 @@ function App() {
 
     const switchToggleHandler = () => {
         setIsSelected(!isSelected)
-        console.log(isSelected)
     }
 
     return (
         <NextUIProvider>
-            <main className={`${isSelected ? 'dark' : ''} text-foreground bg-background h-screen`}>
+            <main className={`${isSelected ? '' : 'dark'} text-foreground bg-background h-screen p-4`}>
                 <Header
                     isSelected={isSelected}
                     switchToggleHandler={switchToggleHandler}
@@ -33,15 +32,40 @@ function App() {
                 </section>
                 <section>
                     <h2>My coins</h2>
-                    <div className={'bg-slate-300 p-4 rounded-xl'}>
-                        <User
-                            name="Jane Doe"
-                            description="Product Designer"
-                            avatarProps={{
-                                src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
-                            }}
-                        />
-                    </div>
+                    <Card>
+                        <CardBody>
+                            <User
+                                name="Jane Doe"
+                                description="Product Designer"
+                                avatarProps={{
+                                    src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
+                                }}
+                            />
+                        </CardBody>
+                    </Card>
+                    <Card>
+                        <CardBody>
+                            <User
+                                name="Jane Doe"
+                                description="Product Designer"
+                                avatarProps={{
+                                    src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
+                                }}
+                            />
+                        </CardBody>
+                    </Card>
+                    <Card>
+                        <CardBody>
+                            <User
+                                name="Jane Doe"
+                                description="Product Designer"
+                                avatarProps={{
+                                    src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
+                                }}
+                            />
+                        </CardBody>
+                    </Card>
+
                 </section>
 
             </main>
