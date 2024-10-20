@@ -1,6 +1,8 @@
 import {Button, Card, CardBody, NextUIProvider, User} from "@nextui-org/react";
 import {Header} from "./components/Header.tsx";
 import {useState} from "react";
+import {Footer} from "./components/Footer.tsx";
+import {ExchangeIcon} from "./icons/ExchangeIcon.tsx";
 
 function App() {
     const [isSelected, setIsSelected] = useState(true)
@@ -10,24 +12,24 @@ function App() {
     }
 
     return (
-        <NextUIProvider>
-            <main className={`${isSelected ? '' : 'dark'} text-foreground bg-background h-screen p-4`}>
-                <Header
-                    isSelected={isSelected}
-                    switchToggleHandler={switchToggleHandler}
-                />
+        <NextUIProvider className={`${isSelected ? '' : 'dark'} text-foreground bg-background flex flex-col h-full`}>
+            <Header
+                isSelected={isSelected}
+                switchToggleHandler={switchToggleHandler}
+            />
+            <main className={'flex flex-col flex-grow px-4'}>
                 <section>
 
-                    <Card>
+                    <Card className={'bg-blue-100 text-black'}>
                         <CardBody>
                             <p>Total estimated value</p>
                             <div className={'text-3xl bold'}>Sum <span className={'text-xl bold'}>Curancy</span></div>
                         </CardBody>
                     </Card>
-                    <div>
-                        <Button>123</Button>
-                        <Button>123</Button>
-                        <Button>123</Button>
+                    <div className={'flex w-full'}>
+                        <Button fullWidth startContent={<ExchangeIcon/>}>Send</Button>
+                        <Button fullWidth startContent={<ExchangeIcon/>}>Convert</Button>
+                        <Button fullWidth startContent={<ExchangeIcon/>}>Deposit</Button>
                     </div>
                 </section>
                 <section>
@@ -67,8 +69,9 @@ function App() {
                     </Card>
 
                 </section>
-
             </main>
+
+            <Footer/>
         </NextUIProvider>
 
 
