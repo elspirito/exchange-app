@@ -11,6 +11,7 @@ import {
 import {MoonIcon} from "../icons/MoonIcon.tsx";
 import {SunIcon} from "../icons/SunIcon.tsx";
 import {CaretDownIcon} from "../icons/CaretDownIcon.tsx";
+import {ShareIcon} from "../icons/ShareIcon.tsx";
 
 type Props = {
     isSelected: boolean
@@ -60,7 +61,7 @@ export const Header = ({isSelected, switchToggleHandler}: Props) => {
                     }
                 />
 
-                <Button size={'sm'}>Share</Button>
+                <Button isIconOnly size={'sm'}><ShareIcon/></Button>
 
             </div>
         </header>

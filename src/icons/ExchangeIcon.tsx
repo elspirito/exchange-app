@@ -1,11 +1,18 @@
-export const ExchangeIcon = (props) => (
+export const ExchangeIcon = ({
+                                 fill = 'currentColor',
+                                 filled,
+                                 size,
+                                 height,
+                                 width,
+                                 label,
+                                 ...props
+                             }) => (
     <svg
-        aria-hidden="true"
-        focusable="false"
-        height="1em"
-        role="presentation"
+        data-name="Exchange"
+        xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        width="1em"
+        width={size || width || 24}
+        height={size || height || 24}
         {...props}
     >
         <path
