@@ -22,7 +22,6 @@ export const Header = ({isSelected, switchToggleHandler}: Props) => {
 
 
 
-
     return (
         <header className={'flex justify-between p-4'}>
             <ButtonGroup variant="flat">
