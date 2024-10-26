@@ -1,8 +1,7 @@
-import {Button, Card, CardBody, NextUIProvider, User} from "@nextui-org/react";
+import {NextUIProvider} from "@nextui-org/react";
 import {Header} from "./components/Header.tsx";
 import {useState} from "react";
 import {Footer} from "./components/Footer.tsx";
-import {ExchangeIcon} from "./icons/ExchangeIcon.tsx";
 import {Main} from "./components/Main.tsx";
 
 function App() {
