@@ -53,9 +53,9 @@ export const Header = ({isSelected, switchToggleHandler}: Props) => {
                     onChange={switchToggleHandler}
                     thumbIcon={({ isSelected, className }) =>
                         isSelected ? (
-                            <SunIcon className={className} size={'16'} />
+                            <SunIcon className={className} size={16} />
                         ) : (
-                            <MoonIcon className={className} size={'16'} />
+                            <MoonIcon className={className} size={16} />
                         )
                     }
                 />

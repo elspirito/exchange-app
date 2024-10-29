@@ -5,5 +5,5 @@ export type Icons = {
     height?: string
     width?: string
     label?: string
-
+    className?: string
 }
