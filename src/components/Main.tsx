@@ -1,11 +1,20 @@
-
 import {Button, Card, CardBody, User} from "@nextui-org/react";
 import {ExchangeIcon} from "../icons/ExchangeIcon.tsx";
 import {Display} from "./Display.tsx";
 import {ArrowDownIcon} from "../icons/ArrowDownIcon.tsx";
 import {ArrowUpIcon} from "../icons/ArrowUpIcon.tsx";
+import {useQuery} from "react-query";
 
 export const Main = () => {
+    const fetchData = async () => {
+        const response = await fetch('https://catfact.ninja/fact');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    };
+    const { data, error, isLoading } = useQuery(['dataKey'], fetchData);
+    console.log(data)
     return (
         <main className={'flex flex-col flex-grow px-4'}>
 
@@ -20,6 +29,11 @@ export const Main = () => {
 
             <section>
                 <h2>My coins</h2>
+
+                {
+                   data && data.fact
+                 }
+
                 <Card>
                     <CardBody>
                         <User

@@ -3,6 +3,7 @@ import {Header} from "./components/Header.tsx";
 import {useState} from "react";
 import {Footer} from "./components/Footer.tsx";
 import {Main} from "./components/Main.tsx";
+import {QueryClient, QueryClientProvider} from "react-query";
 
 function App() {
     const [isSelected, setIsSelected] = useState(true)
@@ -10,20 +11,21 @@ function App() {
     const switchToggleHandler = () => {
         setIsSelected(!isSelected)
     }
-
+    const queryClient = new QueryClient();
     return (
-        <NextUIProvider className={`${isSelected ? '' : 'dark'} text-foreground bg-background flex flex-col h-full`}>
-            <Header
-                isSelected={isSelected}
-                switchToggleHandler={switchToggleHandler}
-            />
+        <QueryClientProvider client={queryClient}>
+            <NextUIProvider
+                className={`${isSelected ? '' : 'dark'} text-foreground bg-background flex flex-col h-full`}>
+                <Header
+                    isSelected={isSelected}
+                    switchToggleHandler={switchToggleHandler}
+                />
 
-            <Main/>
+                <Main/>
 
-            <Footer/>
-        </NextUIProvider>
-
-
+                <Footer/>
+            </NextUIProvider>
+        </QueryClientProvider>
     )
 }
 
