@@ -1,4 +1,4 @@
-import {Button, Card, CardBody} from "@nextui-org/react";
+import {Button, Card, CardBody, Link} from "@nextui-org/react";
 import {WalletIcon} from "../icons/WalletIcon.tsx";
 import {SettingsIcon} from "../icons/SettingsIcon.tsx";
 import {PulseIcon} from "../icons/PulseIcon.tsx";
@@ -10,9 +10,9 @@ export const Footer = () => {
             <Card radius={'none'} shadow={'none'}>
                 <CardBody>
                     <div className={'flex flex-grow'}>
-                        <Button fullWidth size={'lg'} startContent={<WalletIcon />}>Wallet</Button>
-                        <Button fullWidth size={'lg'} startContent={<PulseIcon />}>Market</Button>
-                        <Button fullWidth size={'lg'} startContent={<SettingsIcon />}>Settings</Button>
+                        <Button href={'/'} as={Link} fullWidth size={'lg'} startContent={<WalletIcon />}>Wallet</Button>
+                        <Button href={'/market'} as={Link} fullWidth size={'lg'} startContent={<PulseIcon />}>Market</Button>
+                        <Button href={'/settings'} as={Link} fullWidth size={'lg'} startContent={<SettingsIcon />}>Settings</Button>
                     </div>
                 </CardBody>
             </Card>
