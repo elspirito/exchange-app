@@ -45,29 +45,6 @@ export const Wallet = () => {
                         />
                     </CardBody>
                 </Card>
-                <Card>
-                    <CardBody>
-                        <User
-                            name="Jane Doe"
-                            description="Product Designer"
-                            avatarProps={{
-                                src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
-                            }}
-                        />
-                    </CardBody>
-                </Card>
-                <Card>
-                    <CardBody>
-                        <User
-                            name="Jane Doe"
-                            description="Product Designer"
-                            avatarProps={{
-                                src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
-                            }}
-                        />
-                    </CardBody>
-                </Card>
-
             </section>
         </>
 
